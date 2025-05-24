@@ -2,7 +2,9 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -34,5 +36,13 @@ func main() {
 		}{result})
 	})
 
-	http.ListenAndServe(":5001", nil)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "5001"
+	}
+	fmt.Printf("Listening on port %s\n", port)
+	err := http.ListenAndServe(":"+port, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
