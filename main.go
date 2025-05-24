@@ -11,7 +11,9 @@ func main() {
 	http.HandleFunc("/calculate", func(w http.ResponseWriter, r *http.Request) {
 		// Set CORS headers for React client
 		w.Header().Set("Access-Control-Allow-Origin", "http://localhost:5173")
-		w.Header().Set("Access-Control-Allow-Origin", "https://abacus-switch-web-app-react-frontend.vercel.app")
+		w.Header().Set("Access-Control-Allow-Origin", "52.41.36.82")
+		w.Header().Set("Access-Control-Allow-Origin", "54.191.253.12")
+		w.Header().Set("Access-Control-Allow-Origin", "44.226.122.3")
 		w.Header().Set("Content-Type", "application/json")
 
 		if r.Method == "OPTIONS" {
